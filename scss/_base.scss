@@ -1,5 +1,5 @@
-@use 'colors';
-@use 'mixins';
+@use './abstract/colors';
+@use './abstract/mixins';
 body{
     background: colors.$background;
     min-height: 100vh;
