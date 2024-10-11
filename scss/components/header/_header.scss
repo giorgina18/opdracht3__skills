@@ -1,4 +1,5 @@
 @use '../../abstract/mixins';
+@use '../../abstract/colors';
 
 .header {
     width: 80vw;
@@ -6,12 +7,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: colors.$background;
+    padding: 4rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 
     &__logo {
         font-size: 200%;
         border-radius: 50%;
         color: #FEFFD2;
-        background: #FF7D29;
+        background: colors.$gradient;
+        // background: #FF7D29;
         border: 0.2rem dashed transparent;
         width: 8rem;
         height: 8rem;
@@ -38,7 +44,6 @@
 
         &:hover {
             @include mixins.rotate(0.8s);
-
         }
     }
 

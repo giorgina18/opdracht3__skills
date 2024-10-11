@@ -9,3 +9,21 @@
     transition: $duration all;
     transition-timing-function: linear;
 }
+
+@mixin fontsansSerif {
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+}
+
+@mixin fontSerif {
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    font-style: italic;
+}
+
+@mixin Serif {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
