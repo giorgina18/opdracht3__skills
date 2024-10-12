@@ -1,20 +1,36 @@
-.header__toggle{
+@use '../../abstract/colors';
+
+.header__toggle {
     appearance: none;
-    width: 10rem;
-    height: 5rem;
-    border:0.1rem solid #FFBF78;
+    width: 9rem;
+    height: 4rem;
     border-radius: 5rem;
     position: relative;
-}
+    background: colors.$background--dark;
 
-.header__toggle::after{
-    content: "";
-    position: absolute;
-    height: 6rem;
-    width: 6rem;
-    background: #FFBF78;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 5rem;
+        width: 5rem;
+        background: colors.$gradient;
+        border-radius: 50%;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        transition: 0.4s;
+    }
+
+    &:checked {
+        background: colors.$background;
+        border: 0.1rem solid colors.$background--dark;
+
+    }
+
+    &:checked::after {
+        left: 80%;
+
+    }
 }

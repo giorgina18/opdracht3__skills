@@ -3,7 +3,8 @@
 
 .header {
     width: 80vw;
-    height: 15rem;
+    max-width: 150rem;
+    min-height: 15rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,6 +35,7 @@
     &__rightWrapper {
         display: flex;
         gap: 4rem;
+        align-items: center;
     }
 
     &__avatar {
