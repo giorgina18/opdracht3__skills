@@ -12,6 +12,10 @@ body {
   font-size: 2rem;
 }
 
+*:focus {
+  outline: 0.2rem dashed orange !important;
+}
+
 body {
   background: linear-gradient(to bottom right, #FF7D29, 60%, #FF7D29);
   min-height: 100vh;
@@ -24,6 +28,16 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
 .header {
   width: 80vw;
   max-width: 150rem;
@@ -35,6 +49,9 @@ body {
   padding: 4rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  animation-name: popup;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .header__logo {
   font-size: 200%;
@@ -92,6 +109,9 @@ body {
   box-shadow: inset 0 -1rem 2rem 0 rgba(84, 186, 185, 0.4);
   width: 80vw;
   max-width: 150rem;
+  animation-name: popup;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 .showcase__input {
   font-size: 100%;
@@ -110,9 +130,20 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
+.showcase__wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
 .showcase__font {
   font-size: 120%;
   font-weight: 500;
+}
+.showcase:before {
+  transform: translateX(-50%);
+}
+.showcase:after {
+  transform: translateY(-50%);
 }
 .showcase__output {
   font-size: 180%;
@@ -133,7 +164,7 @@ body {
   font-style: italic;
 }
 
-.header__toggle {
+.toggle__input {
   appearance: none;
   width: 9rem;
   height: 4rem;
@@ -141,7 +172,7 @@ body {
   position: relative;
   background: #9B3922;
 }
-.header__toggle::after {
+.toggle__input::after {
   content: "";
   position: absolute;
   height: 5rem;
@@ -153,12 +184,34 @@ body {
   transform: translate(-50%, -50%);
   transition: 0.4s;
 }
-.header__toggle:checked {
+.toggle__input:focus::after {
+  outline: 0.2rem dashed orange;
+}
+.toggle__input:checked {
   background: #FEFFD2;
   border: 0.1rem solid #9B3922;
 }
-.header__toggle:checked::after {
+.toggle__input:checked::after {
   left: 80%;
+}
+
+.heart {
+  background: none;
+  outline: none;
+  background: none;
+  border: none;
+  font-size: 120%;
+  padding: 0.5rem;
+}
+.heart__logo {
+  font-size: 120%;
+  color: #FF7D29;
+}
+.heart__logo:hover {
+  cursor: pointer;
+}
+.heart__logo.fa-solid {
+  color: #FF7D29;
 }
 
 @media screen and (max-width: 62.5rem) {

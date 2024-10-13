@@ -1,14 +1,12 @@
 @use '../../abstract/colors';
 
-.header__toggle {
+.toggle__input {
     appearance: none;
     width: 9rem;
     height: 4rem;
     border-radius: 5rem;
     position: relative;
     background: colors.$background--dark;
-
-
 
     &::after {
         content: "";
@@ -21,6 +19,10 @@
         left: 25%;
         transform: translate(-50%, -50%);
         transition: 0.4s;
+    }
+
+    &:focus::after{
+        outline: 0.2rem dashed orange;
     }
 
     &:checked {

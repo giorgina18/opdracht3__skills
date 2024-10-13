@@ -1,5 +1,6 @@
 @use '../../abstract/mixins';
 @use '../../abstract/colors';
+@use '../../abstract/animations';
 
 .header {
     width: 80vw;
@@ -12,6 +13,7 @@
     padding: 4rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    @include animations.popup;
 
     &__logo {
         font-size: 200%;

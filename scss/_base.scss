@@ -1,6 +1,9 @@
 @use './abstract/colors';
 @use './abstract/mixins';
 
+*:focus {
+    outline: 0.2rem dashed orange !important;
+}
 
 body {
     background: colors.$gradient;
